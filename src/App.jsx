@@ -4,9 +4,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './Header'
 import data from './data/reviewData'
 import Body from './Body'
+import ReviewForm from './components/ReviewForm'
 import ReviewList from './components/ReviewList'
 import ReviewStats from './components/ReviewStats'
 import Footer from './Footer'
+
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
     <>
       
       < Header text ="Review Application Version1" />   
-      
+        <ReviewForm />
         <div className="container">   
         < ReviewStats reviews={review} />      
          <ReviewList reviews={review} deleteReview={deleteReview} />

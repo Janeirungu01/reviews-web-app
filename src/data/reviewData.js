@@ -13,6 +13,11 @@ const reviewData = [
         id:3,
         rating:8,
         text:'This is another rating in the review data'
+      },
+      {
+        id:4,
+        rating:5,
+        text:'This is another rating in the review data'
       }
 ]
 

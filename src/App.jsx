@@ -30,8 +30,7 @@ function App() {
         < ReviewStats reviews={review} />      
          <ReviewList reviews={review} deleteReview={deleteReview} />
         </div>
-
-      < Body />
+     
       < Footer />
 
     </>

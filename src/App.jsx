@@ -7,8 +7,9 @@ import Body from './Body'
 import ReviewForm from './components/ReviewForm'
 import ReviewList from './components/ReviewList'
 import ReviewStats from './components/ReviewStats'
+import { v4 as uuid } from 'uuid'
+ 
 import Footer from './Footer'
-
 
 
 function App() {
@@ -21,11 +22,20 @@ function App() {
         setReview(review.filter((item) => item.id !==id))
       }
     }
+
+    //add a review
+    const AddReview = (newReview) => {
+      newReview.id =uuid()
+      setReview([newReview, ...review])
+    }
+
+
     return (
     <>
       
       < Header text ="Review Application Version1" />   
-        <ReviewForm />
+        <ReviewForm handleAdd={AddReview} />
+
         <div className="container">   
         < ReviewStats reviews={review} />      
          <ReviewList reviews={review} deleteReview={deleteReview} />

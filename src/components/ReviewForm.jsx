@@ -17,6 +17,7 @@ function ReviewForm({handleAdd}) {
     const [msg, setMsg] = useState('')
     //state to handle ratings from users
     const [rating, setRating] = useState(8)
+    
     //function to update the text state(in the input field) and also validate the text characters to be above 20 before button will be enabled
     const textHandler =(e) => {
         if(text === '') {

@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
-import Header from './Header'
+import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from './components/Header';
 import data from './data/reviewData'
-import Body from './Body'
 import ReviewForm from './components/ReviewForm'
 import ReviewList from './components/ReviewList'
 import ReviewStats from './components/ReviewStats'
-import { v4 as uuid } from 'uuid'
+import About from './components/Pages/About'
+import Review from './components/Pages/Review'
+import Home from './components/Pages/Home'
+
  
 import Footer from './Footer'
 
@@ -23,23 +25,36 @@ function App() {
       }
     }
 
-    //add a review
+    //function to add a review
     const AddReview = (newReview) => {
       newReview.id =uuid()
+      //adds new review to the rest of the reviews 
       setReview([newReview, ...review])
     }
 
 
     return (
     <>
-      
-      < Header text ="Review Application Version1" />   
-        <ReviewForm handleAdd={AddReview} />
+    < Header text ="Review Application Version 1" /> 
 
-        <div className="container">   
-        < ReviewStats reviews={review} />      
-         <ReviewList reviews={review} deleteReview={deleteReview} />
-        </div>
+    <Router>
+      <Routes>
+        <Route path= '/' element={
+          <>
+          <ReviewForm handleAdd={AddReview} />
+            <div className="container">   
+            < ReviewStats reviews={review} />      
+            <ReviewList reviews={review} deleteReview={deleteReview} />
+            </div>
+          </>
+        }></Route>
+
+        <Route path= '/' element={<Home />} /> 
+        <Route path= '/about' element={<About />} /> 
+        <Route path= '/review' element={<Review />} /> 
+      </Routes>
+    </Router>   
+             
      
       < Footer />
 

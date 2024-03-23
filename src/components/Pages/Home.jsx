@@ -1,9 +1,9 @@
 import Button from "../Button"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { FaQuestionCircle } from "react-icons/fa"
 
 function Home() {
-  const navigate = useNavigate() 
-
+  
   return (
     <>
     <div className="container"> 
@@ -12,7 +12,13 @@ function Home() {
         <p>Thankyou for using our product</p>
         <p>We would like you to review about your experience with us.</p> 
         <br /> <br />
-        <Button type='button' variant='secondary' onclick={() => navigate('/review')}>Review</Button>    
+        <Link to="/review"><Button type='button' variant='secondary' >Review</Button></Link>
+          
+      </div>
+      <div className="about-link">
+        <Link to="/about">
+          <FaQuestionCircle size={40} />
+        </Link>
       </div>
     </div>
       

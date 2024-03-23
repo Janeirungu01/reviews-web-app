@@ -6,6 +6,7 @@ import ReviewForm from '../ReviewForm'
 import ReviewList from '../ReviewList'
 import ReviewStats from '../ReviewStats'
 import { Link } from 'react-router-dom';
+import Button from '../Button';
 
 function Review() {
   const [review, setReview] = useState(data)
@@ -32,7 +33,7 @@ function Review() {
             <ReviewList reviews={review} deleteReview={deleteReview} />
             </div>
             <p className='about-link'> 
-              <Link to="/">Go Back Home</Link>
+              <Link to="/"><Button type='button' variant='secondary' >Go Back Home</Button></Link>
             </p>
     </>
   )

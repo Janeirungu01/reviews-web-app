@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Button from "../Button";
+
 
 function About() {
   return (
@@ -12,7 +14,7 @@ function About() {
       
         </div>
         <p className='about-link'> 
-              <Link to="/">Go Back Home</Link>
+              <Link to="/"><Button type='button' variant='secondary' >Go Home</Button></Link>
           </p>
       </div>
           

@@ -26,11 +26,11 @@ ul {
 header {
   height: 70px;
   width: 100%;
-  /* display: flex; 
-  background-color: #ff6a95;*/
+  /* display: flex; */
+  background-color: #ff6a95;
   justify-content: space-between;
   align-items: center;
-  margin: 5px;
+  margin: 0px;
   padding: 10px;
   text-align: center;
 }
